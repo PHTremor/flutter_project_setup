@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kaizen_lite/core/state_managers/a.screen_managers.dart';
-import 'package:kaizen_lite/ui/screens/a.screens.dart';
+
+import '../../core/state_managers/a.screen_managers.dart';
+import '../screens/a.screens.dart';
 
 class AppRouter extends RouterDelegate
     with ChangeNotifier, PopNavigatorRouterDelegateMixin {

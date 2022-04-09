@@ -1,6 +1,6 @@
 {
-    "name": "kaizen_lite",
-    "short_name": "kaizen_lite",
+    "name": "project_setup",
+    "short_name": "project_setup",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

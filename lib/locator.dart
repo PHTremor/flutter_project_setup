@@ -1,5 +1,5 @@
 import 'package:get_it/get_it.dart';
-import 'package:kaizen_lite/core/state_managers/a.screen_managers.dart';
+import 'package:project_setup/core/state_managers/a.screen_managers.dart';
 
 
 GetIt locator = GetIt.instance;

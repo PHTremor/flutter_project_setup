@@ -1,4 +1,4 @@
-# kaizen_lite
+# project_setup
 
 A new Flutter project.
 

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(kaizen_lite LANGUAGES CXX)
+project(project_setup LANGUAGES CXX)
 
-set(BINARY_NAME "kaizen_lite")
+set(BINARY_NAME "project_setup")
 
 cmake_policy(SET CMP0063 NEW)
 

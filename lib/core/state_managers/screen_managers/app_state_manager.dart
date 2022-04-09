@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:kaizen_lite/core/state_managers/a.screen_managers.dart';
+import 'package:project_setup/core/state_managers/a.screen_managers.dart';
 
 class AppStateManager extends BaseScreenProvider {
   // variables ....Fields

@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:kaizen_lite/core/state_managers/a.screen_managers.dart';
-import 'package:kaizen_lite/ui/base_provider.dart';
-import 'package:kaizen_lite/ui/constants/kaizen_theme.dart';
-import 'package:kaizen_lite/ui/navigation/kaizen_pages.dart';
+import 'package:project_setup/core/state_managers/a.screen_managers.dart';
+import 'package:project_setup/ui/base_provider.dart';
+import 'package:project_setup/ui/constants/kaizen_theme.dart';
+import 'package:project_setup/ui/navigation/kaizen_pages.dart';
 
 import '../../components/a.components.dart';
 

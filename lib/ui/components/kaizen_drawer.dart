@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kaizen_lite/ui/constants/a.constants.dart';
+
+import '../constants/a.constants.dart';
 
 class KaizenDrawer extends StatelessWidget {
   final padding = const EdgeInsets.symmetric(horizontal: 20);

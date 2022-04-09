@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:kaizen_lite/ui/base_provider.dart';
-import 'package:kaizen_lite/ui/constants/kaizen_theme.dart';
-import 'package:kaizen_lite/ui/navigation/app_router.dart';
+import 'package:project_setup/ui/base_provider.dart';
+import 'package:project_setup/ui/constants/a.constants.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
 
 import 'core/state_managers/a.screen_managers.dart';
 import 'locator.dart';
+import 'ui/navigation/app_router.dart';
 
 /// Function to initialise all the pre-app things
 globalInitializer() async {
@@ -17,17 +17,17 @@ globalInitializer() async {
 
 void main() async {
   await globalInitializer();
-  runApp(const KaizenApp());
+  runApp(const SetupApp());
 }
 
-class KaizenApp extends StatefulWidget {
-  const KaizenApp({Key? key}) : super(key: key);
+class SetupApp extends StatefulWidget {
+  const SetupApp({Key? key}) : super(key: key);
 
   @override
-  State<KaizenApp> createState() => _KaizenAppState();
+  State<SetupApp> createState() => _SetupAppState();
 }
 
-class _KaizenAppState extends State<KaizenApp> {
+class _SetupAppState extends State<SetupApp> {
   // Hold all the state managers here ...
   final _appStateManager = locator<AppStateManager>();
 

@@ -1,8 +1,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:kaizen_lite/core/state_managers/a.screen_managers.dart';
-import 'package:kaizen_lite/locator.dart';
+import 'package:project_setup/core/state_managers/a.screen_managers.dart';
+import 'package:project_setup/locator.dart';
 import 'package:provider/provider.dart';
 
 class BaseScreen<T extends BaseScreenProvider> extends StatefulWidget {
