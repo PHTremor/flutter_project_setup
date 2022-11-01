@@ -1,59 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/state_managers/a.screen_managers.dart';
 import '../screens/a.screens.dart';
 
-class AppRouter extends RouterDelegate
-    with ChangeNotifier, PopNavigatorRouterDelegateMixin {
-  @override
-  // navigatorKey
-  final GlobalKey<NavigatorState> navigatorKey;
-
+class AppRouter {
   // Screen Managers
   final AppStateManager appStateManager;
 
   AppRouter({
-    // initialize all the screen managers
+// initialize all the screen managers
     required this.appStateManager,
-  }) : navigatorKey = GlobalKey<NavigatorState>() {
-    // add Listerners for all the state managers
-    appStateManager.addListener(notifyListeners);
-  }
+  });
 
-  // Dipose all managers after use
-  @override
-  void dispose() {
-    appStateManager.removeListener(notifyListeners);
+  late final router = GoRouter(
+    debugLogDiagnostics: true,
+    refreshListenable: appStateManager,
+    initialLocation: "/splash_screen",
+    routes: [
+      GoRoute(
+        path: "/splash_screen",
+        name: "splash_screen",
+        builder: (context, state) => SplashScreen(
+          key: state.pageKey,
+        ),
+      ),
+      GoRoute(
+        path: "/home",
+        name: "home",
+        builder: (context, state) => HomeScreen(
+          key: state.pageKey,
+        ),
+      ),
+    ],
+    // Error Handler
+    errorPageBuilder: (context, state) {
+      return MaterialPage(
+        key: state.pageKey,
+        child: Scaffold(
+          body: Center(
+            child: Text(
+              state.error.toString(),
+            ),
+          ),
+        ),
+      );
+    },
+    // Riderect handelr
+    redirect: (context, state) {
+      // redirect to splash screen
+      final isInitialized = appStateManager.isInitialized;
+      final isAtSplashScreen = state.subloc == "/splash_screen";
+      if (!isInitialized) return isAtSplashScreen ? null : "/splash_screen";
 
-    super.dispose();
-  }
+      // redirect to home
+      final isLoggedIn = appStateManager.isLoggedIn;
+      final isAtHomeScreen = state.subloc == "/home";
+      if (isInitialized && isLoggedIn) return isAtHomeScreen ? null : "/home";
 
-  @override
-  Widget build(BuildContext context) {
-    return Navigator(
-      key: navigatorKey,
-      onPopPage: _handlePopPage,
-      pages: [
-        // A list of Pages & their Conditions
-        if (!appStateManager.isInitialized) SplashScreen.page(),
-        if (appStateManager.isInitialized) HomeScreen.page(),
-      ],
-    );
-  }
-
-  bool _handlePopPage(Route route, result) {
-    // Checks if the current route’s pop succeeded
-    // If it failed, return false; ELSE checks the different routes and
-    // triggers the appropriate state changes
-    if (!route.didPop(result)) {
-      return false;
-    }
-
-    // Handle States when user closes a screen
-    return true;
-  }
-
-  @override
-  Future<void> setNewRoutePath(configuration) async => null;
+      // return null to stop redirecting
+      return null;
+    },
+  );
 }
-

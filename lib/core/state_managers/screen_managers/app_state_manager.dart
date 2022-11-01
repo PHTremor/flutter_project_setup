@@ -20,7 +20,8 @@ class AppStateManager extends BaseScreenProvider {
   void initializeApp() {
     Timer(const Duration(milliseconds: 2000), () {
       _initialized = true;
-
+      // TODO: to be changed
+      _loggedIn = true;
       notifyListeners();
     });
   }

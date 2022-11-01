@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_setup/core/state_managers/a.screen_managers.dart';
+import 'package:project_setup/locator.dart';
 
 import '../constants/a.constants.dart';
 
@@ -89,7 +91,9 @@ class KaizenDrawer extends StatelessWidget {
                       buildMenuItem(
                         text: "Log Out",
                         icon: Icons.logout,
-                        onClicked: () {},
+                        onClicked: () {
+                          locator<AppStateManager>().logout();
+                        },
                         context: context,
                       ),
                     ],

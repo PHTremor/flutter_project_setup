@@ -2,22 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../core/state_managers/a.screen_managers.dart';
 import '../../locator.dart';
-import '../navigation/kaizen_pages.dart';
 
 class SplashScreen extends StatefulWidget {
-  // SplashScreen MaterialPage Helper
-  static MaterialPage page() {
-    return MaterialPage(
-      name: KaizenPages.splashPath,
-      key: ValueKey(KaizenPages.splashPath),
-      child: const SplashScreen(),
-    );
-  }
-
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {

@@ -42,18 +42,19 @@ class _SetupAppState extends State<SetupApp> {
 
   @override
   Widget build(BuildContext context) {
+    final router = _appRouter.router;
     return BaseScreen<AppStateManager>(
       builder: (context, model, child) {
         // Setting the app's theme [light/dark]
-        ThemeData _theme;
+        ThemeData theme;
         if (model.darkMode) {
-          _theme = KaizenTheme.dark();
+          theme = KaizenTheme.dark();
         } else {
-          _theme = KaizenTheme.light();
+          theme = KaizenTheme.light();
         }
 
-        return MaterialApp(
-          theme: _theme,
+        return MaterialApp.router(
+          theme: theme,
           builder: (context, widget) => ResponsiveWrapper.builder(
             BouncingScrollWrapper.builder(context, widget!),
             defaultScale: true,
@@ -66,11 +67,10 @@ class _SetupAppState extends State<SetupApp> {
             ],
             background: Container(color: kaizenWhite),
           ),
-          home: Router(
-            routerDelegate: _appRouter,
-            backButtonDispatcher: RootBackButtonDispatcher(),
-          ),
           debugShowCheckedModeBanner: false,
+          routerDelegate: router.routerDelegate,
+          routeInformationParser: router.routeInformationParser,
+          routeInformationProvider: router.routeInformationProvider,
         );
       },
     );
