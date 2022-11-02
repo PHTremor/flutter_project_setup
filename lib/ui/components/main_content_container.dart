@@ -21,7 +21,7 @@ class _MainContentContainerState extends State<MainContentContainer> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: mediumPadding),
         decoration: const BoxDecoration(
-          color: kaizenWhite,
+          color: customWhite,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(mediumPadding),
             topRight: Radius.circular(mediumPadding),

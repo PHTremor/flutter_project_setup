@@ -48,9 +48,9 @@ class _SetupAppState extends State<SetupApp> {
         // Setting the app's theme [light/dark]
         ThemeData theme;
         if (model.darkMode) {
-          theme = KaizenTheme.dark();
+          theme = AppTheme.dark();
         } else {
-          theme = KaizenTheme.light();
+          theme = AppTheme.light();
         }
 
         return MaterialApp.router(
@@ -65,7 +65,7 @@ class _SetupAppState extends State<SetupApp> {
               const ResponsiveBreakpoint.resize(1200, name: DESKTOP),
               const ResponsiveBreakpoint.autoScale(2460, name: "4K"),
             ],
-            background: Container(color: kaizenWhite),
+            background: Container(color: customWhite),
           ),
           debugShowCheckedModeBanner: false,
           routerDelegate: router.routerDelegate,

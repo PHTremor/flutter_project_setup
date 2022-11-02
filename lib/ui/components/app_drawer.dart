@@ -4,10 +4,10 @@ import 'package:project_setup/locator.dart';
 
 import '../constants/a.constants.dart';
 
-class KaizenDrawer extends StatelessWidget {
+class AppDrawer extends StatelessWidget {
   final padding = const EdgeInsets.symmetric(horizontal: 20);
 
-  const KaizenDrawer({Key? key}) : super(key: key);
+  const AppDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class KaizenDrawer extends StatelessWidget {
 
     return Drawer(
       child: Container(
-        color: kaizenBlue,
+        color: customBlue,
         child: Column(children: [
           // Header
           UserAccountsDrawerHeader(
@@ -27,7 +27,7 @@ class KaizenDrawer extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .headline6!
-                  .copyWith(color: kaizenWhite),
+                  .copyWith(color: customWhite),
             ),
             accountEmail: Text(
               email,
@@ -39,66 +39,68 @@ class KaizenDrawer extends StatelessWidget {
             ),
           ),
           // Menu Contents|List
-          SingleChildScrollView(
-            child: Container(
-              padding: padding,
-              child: Column(
-                children: [
-                  const SizedBox(height: 15),
-                  // Search Task
-                  buildSearchField(context: context),
-                  // List Tiles
-                  buildMenuItem(
-                    text: "Contracts",
-                    icon: Icons.gavel,
-                    onClicked: () {},
-                    context: context,
-                  ),
-                  buildMenuItem(
-                    text: "Projects",
-                    icon: Icons.view_stream,
-                    onClicked: () {},
-                    context: context,
-                  ),
-                  buildMenuItem(
-                    text: "Tasks",
-                    icon: Icons.fact_check,
-                    onClicked: () {},
-                    context: context,
-                  ),
-                  buildMenuItem(
-                    text: "Tickets",
-                    icon: Icons.support_agent,
-                    onClicked: () {},
-                    context: context,
-                  ),
-                  buildMenuItem(
-                    text: "Notice Board",
-                    icon: Icons.developer_board,
-                    onClicked: () {},
-                    context: context,
-                  ),
-                  buildMenuItem(
-                    text: "Reports",
-                    icon: Icons.insights,
-                    onClicked: () {},
-                    context: context,
-                  ),
-                  const SizedBox(height: 150),
-                  Column(
-                    children: [
-                      const Divider(color: Colors.white70),
-                      buildMenuItem(
-                        text: "Log Out",
-                        icon: Icons.logout,
-                        onClicked: () {
-                          locator<AppStateManager>().logout();
-                        },
-                        context: context,
-                      ),
-                    ],
-                  ),
-                ],
+          Flexible(
+            child: SingleChildScrollView(
+              child: Container(
+                padding: padding,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 15),
+                    // Search Task
+                    buildSearchField(context: context),
+                    // List Tiles
+                    buildMenuItem(
+                      text: "Contracts",
+                      icon: Icons.gavel,
+                      onClicked: () {},
+                      context: context,
+                    ),
+                    buildMenuItem(
+                      text: "Projects",
+                      icon: Icons.view_stream,
+                      onClicked: () {},
+                      context: context,
+                    ),
+                    buildMenuItem(
+                      text: "Tasks",
+                      icon: Icons.fact_check,
+                      onClicked: () {},
+                      context: context,
+                    ),
+                    buildMenuItem(
+                      text: "Tickets",
+                      icon: Icons.support_agent,
+                      onClicked: () {},
+                      context: context,
+                    ),
+                    buildMenuItem(
+                      text: "Notice Board",
+                      icon: Icons.developer_board,
+                      onClicked: () {},
+                      context: context,
+                    ),
+                    buildMenuItem(
+                      text: "Reports",
+                      icon: Icons.insights,
+                      onClicked: () {},
+                      context: context,
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height / 10.0),
+                    Column(
+                      children: [
+                        const Divider(color: Colors.white70),
+                        buildMenuItem(
+                          text: "Log Out",
+                          icon: Icons.logout,
+                          onClicked: () {
+                            locator<AppStateManager>().logout();
+                          },
+                          context: context,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           )
@@ -153,14 +155,14 @@ class KaizenDrawer extends StatelessWidget {
         hintStyle: Theme.of(context).textTheme.bodyText2,
         prefixIcon: const Icon(Icons.search),
         filled: true,
-        fillColor: kaizenWhite,
+        fillColor: customWhite,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.0),
-          borderSide: BorderSide(color: kaizenBlue.withOpacity(0.7)),
+          borderSide: BorderSide(color: customBlue.withOpacity(0.7)),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.0),
-          borderSide: BorderSide(color: kaizenWhite.withOpacity(0.7)),
+          borderSide: BorderSide(color: customWhite.withOpacity(0.7)),
         ),
       ),
     );

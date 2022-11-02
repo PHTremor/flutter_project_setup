@@ -1,21 +1,11 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:project_setup/core/state_managers/a.screen_managers.dart';
 import 'package:project_setup/ui/base_provider.dart';
-import 'package:project_setup/ui/constants/kaizen_theme.dart';
-import 'package:project_setup/ui/navigation/kaizen_pages.dart';
+import 'package:project_setup/ui/constants/app_theme.dart';
 
 import '../../components/a.components.dart';
 
 class HomeScreen extends StatefulWidget {
-  static MaterialPage page() {
-    return MaterialPage(
-        name: KaizenPages.homePath,
-        key: ValueKey(KaizenPages.homePath),
-        child: const HomeScreen());
-  }
-
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -30,13 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return BaseScreen<AppStateManager>(
       builder: (context, model, child) => Scaffold(
         key: scaffoldKey,
-        backgroundColor: kaizenBlue,
-        drawer: KaizenDrawer(),
+        backgroundColor: customBlue,
+        drawer: const AppDrawer(),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // The Blue Header
-            KaizenHeader(
+            AppHeader(
               title: "DASHBOARD",
               iconRight: Icons.notifications_active_outlined,
               isMenu: true,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../constants/kaizen_theme.dart';
+import '../constants/app_theme.dart';
 
-class KaizenHeader extends StatefulWidget {
+class AppHeader extends StatefulWidget {
   final IconData? iconRight;
   final IconData iconLeft;
   final String title;
@@ -10,7 +10,7 @@ class KaizenHeader extends StatefulWidget {
   final AssetImage? image;
   final Function()? onClickIcon;
 
-  const KaizenHeader({
+  const AppHeader({
     required this.title,
     required this.isMenu,
     this.iconRight,
@@ -21,10 +21,10 @@ class KaizenHeader extends StatefulWidget {
         super(key: key);
 
   @override
-  State<KaizenHeader> createState() => _KaizenHeaderState();
+  State<AppHeader> createState() => _AppHeaderState();
 }
 
-class _KaizenHeaderState extends State<KaizenHeader> {
+class _AppHeaderState extends State<AppHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,7 +43,7 @@ class _KaizenHeaderState extends State<KaizenHeader> {
               onTap: widget.onClickIcon,
               child: Icon(
                 widget.iconLeft,
-                color: kaizenWhite,
+                color: customWhite,
               ),
             ),
           ),
@@ -56,7 +56,7 @@ class _KaizenHeaderState extends State<KaizenHeader> {
               style: Theme.of(context)
                   .textTheme
                   .bodyText1!
-                  .copyWith(color: kaizenWhite),
+                  .copyWith(color: customWhite),
             ),
           ),
           const Spacer(),
@@ -68,7 +68,7 @@ class _KaizenHeaderState extends State<KaizenHeader> {
               height: 45,
               width: 50,
               decoration: BoxDecoration(
-                color: kaizenGrey.withOpacity(0.4),
+                color: customGrey.withOpacity(0.4),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(defaultPadding),
                   topRight: Radius.circular(defaultPadding),
@@ -85,14 +85,14 @@ class _KaizenHeaderState extends State<KaizenHeader> {
                       style: Theme.of(context)
                           .textTheme
                           .bodyText2!
-                          .copyWith(color: kaizenOrange),
+                          .copyWith(color: customOrange),
                     ),
                   ),
                   Positioned(
                     bottom: 5.0,
                     child: Icon(
                       Icons.notifications_active,
-                      color: kaizenOrange,
+                      color: customOrange,
                       size: extraMediumPadding,
                     ),
                   )

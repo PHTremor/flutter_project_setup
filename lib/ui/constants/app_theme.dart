@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 // FontName
 const String fontNameDefault = 'Montserrat';
 // Colors
-const Color kaizenBlack = Colors.black;
-const Color kaizenWhite = Colors.white;
-const Color kaizenGrey = Colors.grey;
-Color kaizenBlue = const Color.fromARGB(255, 75, 165, 238);
-Color kaizenOrange = const Color.fromARGB(255, 243, 163, 126);
+const Color customBlack = Colors.black;
+const Color customWhite = Colors.white;
+const Color customGrey = Colors.grey;
+Color customBlue = const Color.fromARGB(255, 75, 165, 238);
+Color customOrange = const Color.fromARGB(255, 243, 163, 126);
 // Text Size
 const extraSmallTextSize = 14.0;
 const smallTextSize = 16.0;
@@ -21,44 +21,44 @@ const mediumPadding = 20.0;
 const extraMediumPadding = 30.0;
 const largePadding = 60.0;
 
-class KaizenTheme {
+class AppTheme {
   // Light Text Theme /Text is black
   static TextTheme lightTextTheme = const TextTheme(
     bodyText1: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: extraSmallTextSize,
       fontWeight: FontWeight.w600,
-      color: kaizenBlack,
+      color: customBlack,
     ),
     bodyText2: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: extraSmallTextSize,
       fontWeight: FontWeight.w300,
-      color: kaizenBlack,
+      color: customBlack,
     ),
     headline1: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: largeTextSize,
       fontWeight: FontWeight.bold,
-      color: kaizenBlack,
+      color: customBlack,
     ),
     headline2: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: extraMediumTextSize,
       fontWeight: FontWeight.w600,
-      color: kaizenBlack,
+      color: customBlack,
     ),
     headline3: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: smallTextSize,
       fontWeight: FontWeight.w600,
-      color: kaizenGrey,
+      color: customGrey,
     ),
     headline6: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: mediumTextSize,
       fontWeight: FontWeight.w600,
-      color: kaizenBlack,
+      color: customBlack,
     ),
   );
 
@@ -68,37 +68,37 @@ class KaizenTheme {
       fontFamily: fontNameDefault,
       fontSize: extraSmallTextSize,
       fontWeight: FontWeight.w600,
-      color: kaizenWhite,
+      color: customWhite,
     ),
     bodyText2: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: extraSmallTextSize,
       fontWeight: FontWeight.w300,
-      color: kaizenWhite,
+      color: customWhite,
     ),
     headline1: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: largeTextSize,
       fontWeight: FontWeight.bold,
-      color: kaizenWhite,
+      color: customWhite,
     ),
     headline2: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: extraMediumTextSize,
       fontWeight: FontWeight.w600,
-      color: kaizenWhite,
+      color: customWhite,
     ),
     headline3: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: smallTextSize,
       fontWeight: FontWeight.w600,
-      color: kaizenWhite,
+      color: customWhite,
     ),
     headline6: TextStyle(
       fontFamily: fontNameDefault,
       fontSize: mediumTextSize,
       fontWeight: FontWeight.w600,
-      color: kaizenWhite,
+      color: customWhite,
     ),
   );
 
@@ -106,34 +106,38 @@ class KaizenTheme {
   static ThemeData light() {
     return ThemeData(
       brightness: Brightness.light,
-      backgroundColor: kaizenWhite,
+      backgroundColor: customWhite,
+      primaryColor: customBlue,
+      cardColor: customGrey,
+      scaffoldBackgroundColor: customWhite,
+      
       // CheckBoxes
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith(
           (states) {
-            return kaizenBlack;
+            return customBlack;
           },
         ),
       ),
       // App Bar
       appBarTheme: const AppBarTheme(
-        foregroundColor: kaizenBlack,
-        backgroundColor: kaizenWhite,
+        foregroundColor: customBlack,
+        backgroundColor: customWhite,
       ),
 
       // TabBAr Theme
       tabBarTheme: const TabBarTheme(
-        labelColor: kaizenBlack,
-        unselectedLabelColor: kaizenGrey,
+        labelColor: customBlack,
+        unselectedLabelColor: customGrey,
       ),
       // floating Action Button
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
-        foregroundColor: kaizenWhite,
-        backgroundColor: kaizenBlack,
+        foregroundColor: customWhite,
+        backgroundColor: customBlack,
       ),
       // bottom Navigation Bar
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: kaizenBlue,
+        selectedItemColor: customBlue,
       ),
       // textTheme ...
       textTheme: lightTextTheme,
@@ -144,33 +148,37 @@ class KaizenTheme {
   static ThemeData dark() {
     return ThemeData(
       brightness: Brightness.dark,
-      backgroundColor: kaizenBlack,
+      backgroundColor: customBlack,
+      primaryColor: customBlue,
+      cardColor: customGrey,
+      scaffoldBackgroundColor: customBlack,
+      
       // CheckBoxes
       checkboxTheme: CheckboxThemeData(
         fillColor: MaterialStateColor.resolveWith(
           (states) {
-            return kaizenWhite;
+            return customWhite;
           },
         ),
       ),
       // App Bar
       appBarTheme: const AppBarTheme(
-        foregroundColor: kaizenWhite,
-        backgroundColor: kaizenGrey,
+        foregroundColor: customWhite,
+        backgroundColor: customGrey,
       ),
       // TabBAr Theme
       tabBarTheme: const TabBarTheme(
-        labelColor: kaizenWhite,
-        unselectedLabelColor: kaizenGrey,
+        labelColor: customWhite,
+        unselectedLabelColor: customGrey,
       ),
       // floating Action Button
       floatingActionButtonTheme: FloatingActionButtonThemeData(
-        foregroundColor: kaizenWhite,
-        backgroundColor: kaizenBlue,
+        foregroundColor: customWhite,
+        backgroundColor: customBlue,
       ),
       // bottom Navigation Bar
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        selectedItemColor: kaizenBlue,
+        selectedItemColor: customBlue,
       ),
       // textTheme ...
       textTheme: darkTextTheme,
