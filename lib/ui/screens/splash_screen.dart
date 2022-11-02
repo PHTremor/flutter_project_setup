@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: const [
             Image(
               height: 200,
-              image: AssetImage('assets/images/Kaizen-Logo.png'),
+              image: AssetImage('assets/images/splash_icon.png'),
             ),
           ],
         ),
